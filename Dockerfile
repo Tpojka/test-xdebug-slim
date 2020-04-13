@@ -32,12 +32,7 @@ RUN apt-get update \
  && docker-php-ext-enable xdebug \
  && echo 'xdebug.remote_enable=1' >> /usr/local/etc/php/conf.d/xdebug.ini \
  && echo 'xdebug.remote_port=9000' >>  /usr/local/etc/php/conf.d/xdebug.ini \
- && echo 'xdebug.remote_host=192.168.100.5' >> /usr/local/etc/php/conf.d/xdebug.ini \
-# && echo 'xdebug.remote_host=${HOST_DOCKER_INTERNAL}' >> /usr/local/etc/php/conf.d/xdebug.ini \
-# && echo 'xdebug.remote_host=172.17.0.1' >> /usr/local/etc/php/conf.d/xdebug.ini \
-# && echo 'xdebug.remote_host=docker.for.mac.host.internal' >> /usr/local/etc/php/conf.d/xdebug.ini \
-# && echo 'xdebug.remote_host=host.docker.internal' >> /usr/local/etc/php/conf.d/xdebug.ini \
-# && echo 'xdebug.remote_connect_back=1' >> /usr/local/etc/php/conf.d/xdebug.ini \
+ && echo 'xdebug.remote_host=host.docker.internal' >> /usr/local/etc/php/conf.d/xdebug.ini \
  && a2enmod rewrite \
  && sed -i 's!/var/www/html!/var/www/public!g' /etc/apache2/sites-available/000-default.conf \
  && mv /var/www/html /var/www/public \
