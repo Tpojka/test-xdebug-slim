@@ -1,11 +1,10 @@
 version: "3.7"
 services:
-
     web:
         build:
             context: .
             dockerfile: ./Dockerfile
         ports:
-            - "8080:80"
+            - "8999:80"
         volumes:
             - .:/var/www
